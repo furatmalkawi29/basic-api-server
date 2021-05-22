@@ -16,7 +16,7 @@ const clothesRoutes = require('./routes/clothes.js');
 
 //use
 app.use(express.json()); /*body parser //allows using body in 
-methods who doesnt have body / post/put/patch */
+methods who doesnt have (request body) / post/put/patch */
 app.use(morgan('dev')); // console each req / debugging
 app.use(cors());
 
