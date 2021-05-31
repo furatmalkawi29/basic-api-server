@@ -8,11 +8,62 @@
 ## Author
 Furat Malkawi
 
-## Contact :
+# Links 
 
-* <https://github.com/furatmalkawi29/server-deployment-practice>
+  [Deployed app](https://furat-basic-api.herokuapp.com)
 
 
-## Deployed app 
+  [Error report](https://github.com/furatmalkawi29/basic-api-server/actions)
 
-* <https://furat-basic-api.herokuapp.com >
+
+## Setup
+
+`.env` 
+`cors`  
+`dotenv`  
+`express`  
+`morgan`  
+`uuid`  
+`jest`  
+`supertest`  
+PORT - Port Number
+
+## Running the app
+- npm start
+   - Endpoint: /
+Returns Object
+
+{
+  you are in the home page
+}
+
+  - Endpoint: /api/v1/food/
+
+Returns Object
+```
+localhost:3000/api/v1/food/
+
+{
+    "id": "c89686d4-d4cd-4410-943c-dde2ef133b85",
+    "data": {
+        "name": "pizza",
+        "type": "fast-food"
+    }
+}
+```
+  - Endpoint: /api/v1/clothes/
+
+Returns Object
+```
+{
+    "id": "c89686d4-d4cd-4410-943c-dde2ef133b85",
+    "data": {
+        "name": "pizza",
+        "type": "fast-food"
+    }
+}
+```
+
+UML 
+
+![](./uml.png)

@@ -1,6 +1,10 @@
-module.exports = (err, req, res, next) => {
-  // Sometimes, errors come in as an object, others as a string
-  const error = err.message ? err.message : err;
-  // res.statusMessage = 'Server Error :(';
-  res.json({ error });
+'use strict';
+
+// Export error handler
+module.exports = ( err, req,res,next ) =>{
+  res.status( 500 ).json( {
+    status: 500,
+    message: err.message,
+    route: req.path,
+  } );
 };
