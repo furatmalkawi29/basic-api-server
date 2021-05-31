@@ -149,14 +149,6 @@ describe('basic api server', () => {
     expect(recordResponse.status).toBe(200);
   });
 
-});
-
-
-
-
-
-describe('404 error', () => {
-
   it('should get 404 status error on a bad route', async () => {
     const notFoundResponse ={
       error: 404,
@@ -170,24 +162,11 @@ describe('404 error', () => {
   });
 
 
-  it('should get 404 status error on a bad method', async () => {
-    const notFoundResponse ={
-      error: 404,
-      message: 'Not Found',
-    };
 
-    const postResponse = await request.post('/foo');
-    const putResponse = await request.put('/foo');
-    const deleteResponse = await request.delete('/foo');
+  it( 'should get 404 status', async()=>{
+    const res = await request.post( '/' );
+    expect( res.status ).toBe( 404 );
+  } );
 
-    expect(postResponse.status).toBe(404);
-    expect(postResponse.body).toEqual(notFoundResponse);
-
-    expect(putResponse.status).toBe(404);
-    expect(putResponse.body).toEqual(notFoundResponse);
-
-    expect(deleteResponse.status).toBe(404);
-    expect(deleteResponse.body).toEqual(notFoundResponse);
-  });
 
 });

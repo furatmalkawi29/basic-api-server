@@ -31,8 +31,9 @@ class Food {
   }
 
 
-  delete(id) {
-    return this.db.filter( element => element.id !== id);
+  delete( id ) {
+    this.db = this.db.filter( ( clothes ) => clothes.id !== id );
+    return this.db;
   }
 
 
